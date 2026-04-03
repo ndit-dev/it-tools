@@ -6,6 +6,7 @@ on:
       - 'v*.*.*'
 
 jobs:
+if: false
   docker-release:
     runs-on: ubuntu-latest
     steps:

@@ -46,6 +46,11 @@ jobs:
       - name: Verify build output
         run: ls -la dist
 
+        - name: Measure dist size
+          run: |
+            du -sh dist || true
+            find dist -type f -printf "%s\t%p\n" | sort -nr | head -n 30 || true
+
       - name: Deploy to Azure Static Web Apps (prebuilt)
         uses: Azure/static-web-apps-deploy@v1
         with:

@@ -2,7 +2,7 @@ name: Upstream sync
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 6 * * 1"  # Varje måndag kl 06:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Add upstream
         run: |

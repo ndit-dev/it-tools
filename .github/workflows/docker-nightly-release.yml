@@ -6,6 +6,7 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
+if: false
   check_date:
     runs-on: ubuntu-latest
     name: Check latest commit
